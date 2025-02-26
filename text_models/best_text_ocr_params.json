@@ -1,0 +1,1 @@
+{"det_db_box_thresh": 0.25, "det_db_unclip_ratio": 1.9, "use_angle_cls": true, "rec_algorithm": "SVTR_LCNet", "rec_image_shape": "3, 48, 320", "rec_char_type": "en", "use_direction_classify": true, "drop_score": 0.5}
