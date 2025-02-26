@@ -1,14 +1,82 @@
-**‘WeSee - A Helper for the Visually Impaired’**
+# Vision Aid (WeSee) Project
 
-Simply, a web application for individuals with low vision capabilities to excel in daily tasks.
+## Overview
+Vision Aid is a real-time object detection and text recognition system designed to assist visually impaired individuals. The project integrates YOLOv8 for object detection and PaddleOCR for text recognition into a Flask-based web application, allowing users to capture, upload, or use live detection to recognize objects and text in their environment.
 
-Video of complete execeution of project: https://drive.google.com/file/d/1porrbt0-UMHPqTRN3VeefBLsWTg0TSJW/view?usp=sharing
+## Features
+- **Real-time Object Detection**: Detect objects from a live camera feed.
+- **Text Recognition (OCR)**: Extract and recognize text from images.
+- **Multiple Input Methods**:
+  - Capture an image from a webcam.
+  - Upload an image for detection.
+  - Perform live detection using a connected camera.
+- **Hyperparameter Tuning**:
+  - Object detection models use optimized parameters from `best_object_detection_params.json`.
+  - Text recognition models use optimized parameters from `best_text_ocr_params.json`.
 
-The project, ‘WeSee’ is aimed to address the challenges faced by visually impaired individuals by leveraging cutting-edge technologies, primarily based in Computer Vision and Digital Image Processing, specifically built upon the foundations of Deep Learning.
-It is an innovative assistive tool that empowers visually impaired users to access written and digital content seamlessly, by leveraging a device's camera to provide real-time information about the user's surroundings.
+## Project Structure
+```
+wesee/
+│── object_models/       # Contains object detection models (YOLOv8)
+│── text_models/         # Contains text recognition models (PaddleOCR)
+│── templates/           # HTML templates for the Flask web app
+│── static/              # Static assets (CSS, JavaScript, images)
+│── main.py              # Flask application entry point
+│── best_object_detection_params.json  # Optimized YOLOv8 parameters
+│── best_text_ocr_params.json          # Optimized PaddleOCR parameters
+│── requirements.txt      # Dependencies
+│── README.md            # Project documentation
+```
 
-Key structures of ‘WeSee’ include real-time text recognition, real-time object detection and audio output capabilities, enabling users to effortlessly comprehend and interact with their surroundings. Moreover, the system is designed to adapt to various environmental conditions, providing a robust solution for users in different settings.
+## Installation
+### Prerequisites
+- Python 3.8+
+- Pip
+- Virtual Environment (recommended)
 
-In conclusion, this project contributes to the inclusive integration of individuals with visual disability into our society by fostering independent access to information and promoting equal opportunities.
+### Steps
+1. Clone the repository:
 
-Through the integration of state-of-the-art technologies in Artificial Intelligence and Machine Learning, this project aligns with the overarching goal of creating a more accessible and inclusive world for all individuals.
+2. Create and activate a virtual environment:
+
+3. Install dependencies:
+
+
+## Usage
+1. Start the Flask web application:
+   ```bash
+   python main.py
+   ```
+2. Open your browser and navigate to:
+   ```
+   http://127.0.0.1:5000/
+   ```
+3. Use the web interface to:
+   - Capture an image using the webcam.
+   - Upload an image for analysis.
+   - Start live detection.
+
+## Model Details
+### Object Detection (YOLOv8)
+- Uses yolov8 models.
+- Optimized with the best hyperparameters from `best_object_detection_params.json`.
+- Processes images for object localization and classification.
+
+### Text Recognition (PaddleOCR)
+- Configured with `SVTR_LCNet` for text recognition.
+- Supports English character recognition.
+- Uses tuned hyperparameters from `best_text_ocr_params.json`.
+
+## Evaluation
+- **Object Detection**: Evaluated on a test dataset with performance metrics (mAP, accuracy).
+- **Text Recognition**: Evaluated only on images with detected text, using batch processing for large datasets.
+
+## Future Improvements
+- Enhance support for additional languages in text recognition.
+- Improve real-time performance with hardware acceleration.
+- Develop a mobile-friendly version.
+
+## License
+This project is licensed under the MIT License.
+
+
