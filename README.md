@@ -1,4 +1,4 @@
-# Vision Aid (WeSee) Project
+# Vision Aid Project
 
 ## Overview
 Vision Aid is a real-time object detection and text recognition system designed to assist visually impaired individuals. The project integrates YOLOv8 for object detection and PaddleOCR for text recognition into a Flask-based web application, allowing users to capture, upload, or use live detection to recognize objects and text in their environment.
